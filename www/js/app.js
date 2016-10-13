@@ -23,7 +23,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider)  {
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -50,34 +50,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
+  .state('tab.produts', {
+      url: '/products',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
+        'tab-products': {
+          templateUrl: 'templates/tab-products.html',
           controller: 'ChatsCtrl'
         }
       }
     })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
+    .state('tab.product-detail', {
+      url: '/products/:productId',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
+        'tab-products': {
+          templateUrl: 'templates/product-detail.html',
           controller: 'ChatDetailCtrl'
         }
       }
-    })
-
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
-      }
-    }
-  });
+    });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
