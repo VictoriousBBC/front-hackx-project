@@ -45,9 +45,8 @@ angular.module('starter.services', [])
     all: function() {
       return products;
     },
-    remove: function(product) {
-      products.splice(products.indexOf(product), 1);
-    },
+    
+    
     get: function(productId) {
       for (var i = 0; i < products.length; i++) {
         if (products[i].id === parseInt(productId)) {

@@ -54,12 +54,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
-  .state('tab.produts', {
+  .state('tab.products', {
       url: '/products',
       views: {
         'tab-products': {
           templateUrl: 'templates/tab-products.html',
-          controller: 'ChatsCtrl'
+          controller: 'ProductsCtrl'
         }
       }
     })
@@ -68,7 +68,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       views: {
         'tab-products': {
           templateUrl: 'templates/product-detail.html',
-          controller: 'ChatDetailCtrl'
+          controller: 'ProductDetailCtrl'
         }
       }
     });
