@@ -7,6 +7,10 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
+.config(function($ionicConfigProvider) {
+  $ionicConfigProvider.tabs.position('bottom');
+})
+
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -50,12 +54,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
-  .state('tab.produts', {
+  .state('tab.products', {
       url: '/products',
       views: {
         'tab-products': {
           templateUrl: 'templates/tab-products.html',
-          controller: 'ChatsCtrl'
+          controller: 'ProductsCtrl'
         }
       }
     })
@@ -64,7 +68,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       views: {
         'tab-products': {
           templateUrl: 'templates/product-detail.html',
-          controller: 'ChatDetailCtrl'
+          controller: 'ProductDetailCtrl'
         }
       }
     });
