@@ -41,7 +41,7 @@ angular.module('starter.services', [])
     price: 10
   }];
 
-  return {
+   return {
     all: function() {
       return products;
     },
@@ -51,6 +51,56 @@ angular.module('starter.services', [])
       for (var i = 0; i < products.length; i++) {
         if (products[i].id === parseInt(productId)) {
           return products[i];
+        }
+      }
+      return null;
+    }
+  };
+});
+
+.factory('Users', function() {
+
+ var users =[{
+    id: 0,
+    name: 'Francois Martel',
+  }];
+
+  return {
+    all: function() {
+      return users;
+    },
+    
+
+    get: function(userId) {
+      for (var i = 0; i < users.length; i++) {
+        if (users[i].id === parseInt(userId)) {
+          return users[i];
+        }
+      }
+      return null;
+    }
+  };
+});
+
+.factory('Likes', function() {
+
+  var likes =[{
+    id: 0,
+    productId: 0,
+    userId: 0,
+    heart: true
+  }]
+
+  return {
+    all: function() {
+      return likes;
+    },
+    
+
+    get: function(likeId) {
+      for (var i = 0; i < likes.length; i++) {
+        if (likes[i].id === parseInt(likeId)) {
+          return likes[i];
         }
       }
       return null;
