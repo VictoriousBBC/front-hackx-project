@@ -56,7 +56,7 @@ angular.module('starter.services', [])
       return null;
     }
   };
-});
+})
 
 .factory('Users', function() {
 
@@ -80,7 +80,7 @@ angular.module('starter.services', [])
       return null;
     }
   };
-});
+})
 
 .factory('Likes', function() {
 
@@ -89,7 +89,19 @@ angular.module('starter.services', [])
     productId: 0,
     userId: 0,
     heart: true
-  }]
+  },
+  {
+    id: 1,
+    productId: 1,
+    userId: 0,
+    heart: false
+  },
+  {
+    id: 2,
+    productId: 2,
+    userId: 0,
+    heart: null
+  }];
 
   return {
     all: function() {
