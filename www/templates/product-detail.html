@@ -7,8 +7,11 @@
 <ion-view view-title="{{product.name}}">
   <ion-content class="padding">
     <img ng-src="{{product.photo}}" style="width: 300px">
-    <p>
+    <h2 class='dark'>
       {{product.description}}
+    </h2>
+     <p class='balanced'>
+      {{product.price}}€, and that's cheap, bro
     </p>
     <button class="button button-block button-positive">
       Want to buy? Click link below

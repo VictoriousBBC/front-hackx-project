@@ -1,8 +1,25 @@
 <ion-view view-title="TechBait">
-  <ion-content class="padding">
-    <h2>Bad-Ass AppName</h2>
-    <p>
-    Pour l'instant je laisse un Accueil. Dès que la rubrique "Liked" est terminée je transforme en l'Accueil "newproducts"</a>.
-    </p>
+    <ion-content class="padding">
+    <a class="card" href="#/tab/products/{{product.id}}" style="text-decoration: none;">
+    {{console.log(product.id)}}
+    	<div class="item item-text-wrap">
+		    <img ng-src="{{product.photo}}" style="width: 100%">
+		    <h1 class='dark'>
+		      {{product.name}}
+		    </h1>
+		    <h2 class='dark'>
+			      {{product.description}}
+			</h2>
+		    	<div class="row"> 
+					<div class="col col-50 text-center">
+						<a class="button button-icon icon ion-close-circled assertive"></a>
+					</div>
+					<div class="col col-50 text-center">
+						<a class="button button-icon icon ion-heart balanced"></a>
+					</div>     
+				</div>
+		    </p>
+		 </div>
+	</a>
   </ion-content>
 </ion-view>
