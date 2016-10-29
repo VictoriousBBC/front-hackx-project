@@ -5,17 +5,20 @@ angular.module('starter.controllers', [])
 })
 
 .controller('ProductsCtrl', function($scope, Products, Likes, Users) {
-    $scope.products = Products.all();
+    $scope.products = [];
+    Products.all().then(function(apiProducts) {
+    $scope.products = apiProducts;
+    //$scope.products = Products.all();
     // set user equal to Francois
-    var user = Users.get(0); // => User object with 'Francois'
-    console.log(Users.get(0));
+    //var user = Users.get(0); // => User object with 'Francois'
+    //console.log(Users.get(0));
 
     // set all likes from Francois
-     var liked_products = [];
-     console.log(liked_products);
+     //var liked_products = [];
+     //console.log(liked_products);
 
    // var userLikes = user.likes;
-   alert(user.likes);
+   //alert(user.likes);
    // var arrayLength = myStringArray.length;
 
     // for (var i = 0; i < arrayLength; i++) {
@@ -32,8 +35,10 @@ angular.module('starter.controllers', [])
   //  $scope.products = liked_products
   //  console.log($scope.products);
 
+});
 })
 
 .controller('ProductDetailCtrl', function($scope, $stateParams, Products) {
   $scope.product = Products.get($stateParams.productId);
-});
+})
+
