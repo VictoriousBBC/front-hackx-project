@@ -1,7 +1,13 @@
 angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope, Products) {
-    $scope.product = Products.get(6);
+  rand = Products.all();
+  $scope.product = Products.get(rand[Math.floor(Math.random() * rand.length)].id);
+  // Version précédente ici
+  // var rand = [0 => Products.all().length;
+  // $scope.product = Products.get(rand[Math.floor(Math.random() * rand.length)]);
+    //Afficher la valeur du rand
+    console.log(rand[Math.floor(Math.random() * rand.length)])
 })
 
 .controller('ProductsCtrl', function($scope, Products, Likes, Users) {
@@ -23,7 +29,7 @@ angular.module('starter.controllers', [])
     //Do something
     //}
     //    user.likes.foreach( like ) {
-    // liked_products << like.product 
+    // liked_products << like.product
     // }
     // return liked_products
     // set array with all products associated to likes by Francois
