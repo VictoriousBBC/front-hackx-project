@@ -20,8 +20,20 @@ angular.module('starter.services', [])
         }
       }
       return null;
-    }
-  }
+    },
+    like: function(productId, userId) {
+      return $http.post("https://api-pied-piper.herokuapp.com/products/" + productId + "/like.json", {like: {userId: userId, heart: true}}).then(function(response){
+        like = response.data;
+        return like;
+      });
+    },
+    dislike: function(productId, userId) {
+      return $http.post("https://api-pied-piper.herokuapp.com/products/" + productId + "/like.json", {like: {userId: userId, heart: false}}).then(function(response){
+        like = response.data;
+        return like;
+      };
+    };
+  });
 })
 
 .factory('Users', function() {
