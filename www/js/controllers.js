@@ -2,12 +2,13 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope, Products) {
   rand = Products.all();
-  $scope.product = Products.get(rand[Math.floor(Math.random() * rand.length)].id);
-  // Version précédente ici
-  // var rand = [0 => Products.all().length;
-  // $scope.product = Products.get(rand[Math.floor(Math.random() * rand.length)]);
-    //Afficher la valeur du rand
-    console.log(rand[Math.floor(Math.random() * rand.length)])
+   // $scope.product = Products.get(rand[Math.floor(Math.random() * rand.length)].id);
+
+  $scope.product = [];
+  Products.all().then(function(apiProducts) {
+    $scope.product = apiProducts[Math.floor(Math.random() * apiProducts.length)];
+  });
+
 })
 
 .controller('ProductsCtrl', function($scope, Products, Likes, Users) {
