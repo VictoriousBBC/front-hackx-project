@@ -12,7 +12,16 @@ angular.module('starter.services', [])
           products = response.data;
           return products;
         })
-    },  
+    },
+
+    liked: function() {
+      return $http.get("https://api-pied-piper.herokuapp.com/liked.json")
+        .then(function(response) {
+          products = response.data;
+          return products;
+        })
+    },
+
     get: function(productId) {
       for (var i = 0; i < products.length; i++) {
         if (products[i].id === parseInt(productId)) {
@@ -35,7 +44,7 @@ angular.module('starter.services', [])
     all: function() {
       return users;
     },
-    
+
 
     get: function(userId) {
       for (var i = 0; i < users.length; i++) {
@@ -73,7 +82,7 @@ angular.module('starter.services', [])
     all: function() {
       return likes;
     },
-    
+
 
     get: function(likeId) {
       for (var i = 0; i < likes.length; i++) {
