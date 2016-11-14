@@ -5,9 +5,9 @@
         <img ng-src="{{product.photo}}">
         <h2>{{product.name}}</h2>
         <p>{{product.description}}</p>
-        <a class="button button-icon icon ion-close-circled assertive"></a>
-        
-        <ion-option-button class="button-assertive" ng-click="remove(product)">
+        <a class="button button-icon icon ion-close-circled assertive" ng-click="remove(product.id)"></a>
+
+        <ion-option-button class="button-assertive" >
           Delete
         </ion-option-button>
       </ion-item>
