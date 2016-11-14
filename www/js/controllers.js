@@ -8,7 +8,13 @@ angular.module('starter.controllers', [])
   Products.all().then(function(apiProducts) {
     $scope.product = apiProducts[Math.floor(Math.random() * apiProducts.length)];
   });
-
+  $scope.like = function(productId) {
+    console.log("https://api-pied-piper.herokuapp.com/products/" + productId + "/like.json");
+    return Products.like(productId)
+    .then(function(liking) {
+      $window.location.reload()
+    });
+  }
 })
 
 .controller('ProductsCtrl', function($scope, Products, Likes, Users) {
