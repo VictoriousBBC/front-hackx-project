@@ -12,7 +12,14 @@ angular.module('starter.controllers', [])
     console.log("https://api-pied-piper.herokuapp.com/products/" + productId + "/like.json");
     return Products.like(productId)
     .then(function(liking) {
-      $window.location.reload()
+      window.location.reload();
+    });
+  }
+  $scope.dislike = function(productId) {
+    console.log("https://api-pied-piper.herokuapp.com/products/" + productId + "/dislike.json");
+    return Products.dislike(productId)
+    .then(function(liking) {
+      window.location.reload();
     });
   }
 })

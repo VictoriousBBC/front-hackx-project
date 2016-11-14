@@ -31,8 +31,14 @@ angular.module('starter.services', [])
       return null;
     },
     like: function(productId) {
-      console.log("test")
       return $http.post("https://api-pied-piper.herokuapp.com/products/" + productId + "/like.json", {liking: {action: "like"}}).then(function(response){
+        liking = response.data;
+        return liking;
+      });
+    },
+    dislike: function(productId) {
+      console.log("test")
+      return $http.post("https://api-pied-piper.herokuapp.com/products/" + productId + "/dislike.json", {liking: {action: "dislike"}}).then(function(response){
         console.log("test 2");
         liking = response.data;
         return liking;
