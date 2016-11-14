@@ -30,6 +30,13 @@ angular.module('starter.controllers', [])
       $scope.products = apiProducts;
       console.log(apiProducts);
   });
+  $scope.remove = function(productId) {
+    console.log("https://api-pied-piper.herokuapp.com/products/" + productId + "/remove.json");
+    return Products.remove(productId)
+    .then(function(liking) {
+      window.location.reload();
+    });
+  }
 })
 
 .controller('ProductDetailCtrl', function($scope, $stateParams, Products) {
