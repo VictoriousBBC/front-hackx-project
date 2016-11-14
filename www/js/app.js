@@ -71,6 +71,26 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           controller: 'ProductDetailCtrl'
         }
       }
+    })
+
+    .state('tab.dash-detail', {
+      url: '/dash/:productId',
+      views: {
+        'tab-dash': {
+          templateUrl: 'templates/product-detail.html',
+          controller: 'ProductDetailCtrl'
+        }
+      }
+    })
+
+    .state('tab.dash-detail', {
+      url: '/dash/:productId',
+      views: {
+        'tab-dash': {
+          templateUrl: 'templates/product-detail.html',
+          controller: 'ProductDetailCtrl'
+        }
+      }
     });
 
   // if none of the above states are matched, use this as the fallback
